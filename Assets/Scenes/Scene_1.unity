@@ -1594,6 +1594,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1779268374}
   - component: {fileID: 1779268373}
+  - component: {fileID: 1779268375}
   m_Layer: 0
   m_Name: background_music_play
   m_TagString: Untagged
@@ -1712,6 +1713,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1779268375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779268372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede8c6452d2c0c04b81dff9b13155a25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  button: {fileID: 0}
 --- !u!1 &1797186207
 GameObject:
   m_ObjectHideFlags: 0
