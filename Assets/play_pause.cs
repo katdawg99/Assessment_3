@@ -25,6 +25,12 @@ public class play_pause : MonoBehaviour
         }
     }
 
+    void OnMouseDown()
+    {
+        // Toggle play/pause on mouse click
+        ToggleAudio();
+    }
+
     private void ToggleAudio()
     {
         if (audioSource.isPlaying)
