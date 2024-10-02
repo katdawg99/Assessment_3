@@ -1,12 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UI; // Ensure this is included for UI components
+using System.Collections; // Required for IEnumerator
 
-public class pp : MonoBehaviour
+public class ButtonAudioController : MonoBehaviour
 {
     public AudioSource audioSource; // Reference to your AudioSource
     public Button button; // Reference to your UI Button
+    public Sprite normalSprite; // Sprite for the normal state
+    public Sprite transitionSprite; // Sprite for the transition effect
 
     void Start()
     {
@@ -16,10 +17,10 @@ public class pp : MonoBehaviour
 
     private void OnButtonClick()
     {
-        StartCoroutine(HandleButtonTransitionEffect());
+        StartCoroutine(HandleButtonTransition());
     }
 
-    private IEnumerator HandleButtonTransitionEffect()
+    private IEnumerator HandleButtonTransition()
     {
         // Pause the audio if it is currently playing
         if (audioSource.isPlaying)
@@ -28,24 +29,22 @@ public class pp : MonoBehaviour
         }
 
         // Play the button transition effect (you can customize this)
-        Color originalColor = button.GetComponent<Image>().color;
-        Color targetColor = Color.grey; // Change to desired color during transition
-
+        Image buttonImage = button.GetComponent<Image>();
+        Sprite originalSprite = buttonImage.sprite;
         float duration = 0.5f; // Duration of the transition
         float elapsedTime = 0f;
+
+        // Change the button sprite to the transition sprite
+        buttonImage.sprite = transitionSprite;
 
         while (elapsedTime < duration)
         {
             elapsedTime += Time.deltaTime;
-            float t = elapsedTime / duration;
-
-            // Lerp color for visual feedback
-            button.GetComponent<Image>().color = Color.Lerp(originalColor, targetColor, t);
             yield return null; // Wait for the next frame
         }
 
-        // Reset button color after transition
-        button.GetComponent<Image>().color = originalColor;
+        // Reset button sprite after transition
+        buttonImage.sprite = originalSprite;
 
         // Resume audio playback after transition
         audioSource.UnPause();
