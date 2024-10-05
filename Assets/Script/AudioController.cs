@@ -9,6 +9,22 @@ public class AudioController : MonoBehaviour
     public Button playButton; // Reference to your Play Button
     public Button pauseButton; // Reference to your Pause Button
 
+    private static AudioController instance; // Singleton instance
+
+    void Awake()
+    {
+        // Implement singleton pattern to ensure only one instance exists
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject); // Make this object persistent across scenes
+        }
+        else
+        {
+            Destroy(gameObject); // Destroy duplicate instances
+        }
+    }
+
     void Start()
     {
         // Add listeners for button clicks
