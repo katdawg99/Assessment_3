@@ -837,13 +837,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 640327679}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89da54d84edfd414481aae3bac6eda22, type: 3}
+  m_Script: {fileID: 11500000, guid: 2fdf564cc36658f4d88be73958bc06c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 640327684}
-  button: {fileID: 640327681}
-  normalSprite: {fileID: 21300000, guid: 2f5f88874246f4ebbaca620f3cd37fad, type: 3}
-  transitionSprite: {fileID: 21300000, guid: ff8821736c16349d4b3c8dc2f5ccedcf, type: 3}
+  playButton: {fileID: 640327681}
+  pauseButton: {fileID: 640327681}
 --- !u!1 &734279001
 GameObject:
   m_ObjectHideFlags: 0
@@ -2301,10 +2300,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89da54d84edfd414481aae3bac6eda22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  button: {fileID: 1491768769}
-  normalSprite: {fileID: 21300000, guid: aebe8973df4444fb096d979f24b536bf, type: 3}
-  transitionSprite: {fileID: 21300000, guid: f4877361b6507457d80b5102839b4cdb, type: 3}
 --- !u!1 &1838334257
 GameObject:
   m_ObjectHideFlags: 0
